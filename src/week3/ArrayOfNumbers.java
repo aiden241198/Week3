@@ -11,11 +11,22 @@ package week3;
  */
 public class ArrayOfNumbers {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
+   private final int[][] numbers;
+   
+   public ArrayOfNumbers(int value1, int value2){
+       this.numbers = new int[value1][value2];
+       
+       for(int i=0;i<numbers.length;i++)
+        numbers[i][i] = 0;
+   }
+   
+   public void setStorage(int[][] numbers) {
+       int[][] storage = new int[numbers.length][numbers.length];
+       
+        for (int i = 0; i < numbers.length; i++) {
+            numbers[i] = storage[i];
+        }
+   }
+
     
 }
