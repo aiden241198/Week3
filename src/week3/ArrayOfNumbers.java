@@ -4,29 +4,41 @@
  * and open the template in the editor.
  */
 package week3;
-
+import java.util.Arrays;
 /**
  *
  * @author Aiden
  */
 public class ArrayOfNumbers {
 
-   private final int[][] numbers;
+   protected int[][] numbers;
+   
    
    public ArrayOfNumbers(int value1, int value2){
+       
        this.numbers = new int[value1][value2];
        
-       for(int i=0;i<numbers.length;i++)
-        numbers[i][i] = 0;
    }
    
-   public void setStorage(int[][] numbers) {
-       int[][] storage = new int[numbers.length][numbers.length];
+   public ArrayOfNumbers(int[][] array) {
        
-        for (int i = 0; i < numbers.length; i++) {
-            numbers[i] = storage[i];
+        System.out.println(Arrays.deepToString(array));
+       
+        int[][] storage = new int[array.length][array.length];
+       
+        for (int i = 0; i < array.length; i++) {
+            storage[i] = array[i];
         }
+         int size = array.length;
+        System.out.print("Array Information Copied to Storage\n");
+        System.out.println(Arrays.deepToString(storage));
+        System.out.print(size);
+       
+        
    }
+   
+   
+   
 
     
 }
