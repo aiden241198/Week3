@@ -11,22 +11,17 @@ public class ArrayOfNumbers {
   public ArrayOfNumbers(int value1){
        
        this.numbers = new int[value1];
-      
+       
    }
    
    public ArrayOfNumbers(int[] array) {
        
-        int[] storage = new int[array.length];
-       
-        for (int i = 0; i < array.length; i++) {
-            storage[i] = array[i];
-        }
-         int size = array.length;
-        System.out.print("Array Information Copied to Storage\n");
-        System.out.println(Arrays.toString(storage));
-        System.out.print("Array Size :"+size);
-       
+        this.numbers = new int[array.length];
         
+        for (int i = 0; i < array.length; i++) {
+            numbers[i] = array[i];
+        }
+     
    }
    
    public int item(int value1){
@@ -68,44 +63,43 @@ public class ArrayOfNumbers {
         System.out.println("The largest item stored in array is :"+max);
    }
    
-   public void equal(){
+   public int equal(int value1, int value2){
+    
+       int element1 = value1;
+       int element2 = value2;
        
-       int[] equalArray = { 23, 32, 56, 44, 58, 61, 76, 80, 97, 31 };
-       int value = 23   ;
-       
-       for(int i=0; i < equalArray.length; i++){
-           if(equalArray[i] == value){
-           System.out.println("Value "+value+" found in array index");
-           return;
+       for(int i=0; i < numbers.length; i++){
+           if(numbers[element1] == numbers[element2] ){
+           System.out.println("Equality found in array index "+element1+" and "+element2);
+           break;
            
            } else{
                 System.out.println("No Equal Value");
-                return;
+                break;
             }
        }
-     
+     return element1;
    }
    
    public void gcd(){
       
       Random random = new Random();
-      int[] equalArray = { 23, 32, 56, 44, 58, 61, 76, 80, 97, 31 };
-        
-      int num1 = random.nextInt(equalArray.length); 
+      
+      int num1 = random.nextInt(numbers.length); 
       int num2;
        
        do {
-            num2 = random.nextInt(equalArray.length);
+            num2 = random.nextInt(numbers.length);
        } while (num1 == num2);
        
-       int element1 = equalArray[num1];
-       int element2 = equalArray[num2];
+       int element1 = numbers[num1];
+       int element2 = numbers[num2];
        
        System.out.print(element1+" "+element2+"\n");
        
        int gcd = element1%element2;
        
-       System.out.println("Greatest Comon Divisor is: "+gcd);
+       System.out.println("Greatest Comon Divisor of "+element1+" and "+element2+" is: "+gcd);
        
    }
    
@@ -116,17 +110,17 @@ public class ArrayOfNumbers {
             sum += i;
         }
 
-        System.out.println(sum);
+        System.out.println("Sum of Array is :"+sum);
        
    }
    
    public void average(){
-       int[] Array = { 23, 32, 56, 44, 58, 61, 76, 80, 97, 31 };
-       int aLength = Array.length;
+
+       int aLength = numbers.length;
        
        int sum = 0;
        for (int i=0;i<aLength;i++) {
-           sum += Array[i];
+           sum += numbers[i];
        }
        
        double average = sum / aLength;
@@ -135,26 +129,25 @@ public class ArrayOfNumbers {
    
    public int scalarMultiply(int multiplyer){
        
-       int[] Array = { 23, 32, 56, 44, 58, 61, 76, 80, 97, 31 };
        
-       for(int i=0; i < Array.length; i++){
-           Array[i] = Array[i] * multiplyer;
+       
+       for(int i=0; i < numbers.length; i++){
+           numbers[i] = numbers[i] * multiplyer;
        }
        
-       System.out.println(Arrays.toString(Array));
+       System.out.println(Arrays.toString(numbers));
        
     return multiplyer;
     }
    
     public int addConstant(int val){
        
-       int[] Array = { 23, 32, 56, 44, 58, 61, 76, 80, 97, 31 };
-       
-       for(int i=0; i < Array.length; i++){
-           Array[i] = Array[i] + val;
+      
+       for(int i=0; i < numbers.length; i++){
+           numbers[i] = numbers[i] + val;
        }
        
-       System.out.println(Arrays.toString(Array));
+       System.out.println(Arrays.toString(numbers));
        
     return val;
     }
