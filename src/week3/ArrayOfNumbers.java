@@ -11,31 +11,40 @@ import java.util.Arrays;
  */
 public class ArrayOfNumbers {
 
-   protected int[][] numbers;
+   private int[] numbers;
    
    
-   public ArrayOfNumbers(int value1, int value2){
+  public ArrayOfNumbers(int value1){
        
-       this.numbers = new int[value1][value2];
-       
+       this.numbers = new int[value1];
+      
+       System.out.print(value1);
    }
    
-   public ArrayOfNumbers(int[][] array) {
+   public ArrayOfNumbers(int[] array) {
        
-        System.out.println(Arrays.deepToString(array));
-       
-        int[][] storage = new int[array.length][array.length];
+        int[] storage = new int[array.length];
        
         for (int i = 0; i < array.length; i++) {
             storage[i] = array[i];
         }
          int size = array.length;
         System.out.print("Array Information Copied to Storage\n");
-        System.out.println(Arrays.deepToString(storage));
+        System.out.println(Arrays.toString(storage));
         System.out.print(size);
        
         
    }
+   
+   public int item(int value1){
+       int index = value1;
+       
+       System.out.println(Arrays.toString(numbers));
+       
+       
+       return index;
+   }
+   
    
    
    
